@@ -75,12 +75,12 @@ library(tidyr)
   #Mixed effects model#
   
   lmm <- lmer(Outcome ~ Time * Treatment + Age + (1 | ID), data = longitudinal_data)
-  
+  summary(lmm)
   #Since the model suggests no random intercepts, continue with linear regression#
   
   #Linear regression model#
-  lmm <- lm(Outcome ~ Time * Treatment + Age + Biomarker, data = longitudinal_data)
-  summary(lmm)
+  lmm1 <- lm(Outcome ~ Time * Treatment + Age + Biomarker, data = longitudinal_data)
+  summary(lmm1)
   
   
   #Visualize to confirm relation between biomarker and outcome#
